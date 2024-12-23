@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Molle&family=Mrs+Sheppards&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Great+Vibes&family=Molle&family=Mrs+Sheppards&display=swap" rel="stylesheet">
+
+  </head>
+<body>
+    <header>
+        
+        <nav class="navbar">
+            <div  class="logo">Chaima Maatar</div>
+            <ul class="nav-links" >
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="html/resume.html">CV</a></li>
+              <li><a href="html/experiences.html">Expériences</a></li>
+              <li><a href="html/manifestations.html">Manifestations</a></li>
+              <li><a href="html/play.html">Jouer avec moi</a></li>
+              <li><a href="html/contact.html">Contactez-moi</a></li>
+            </ul>
+            <div class="theme-switch" id="theme-switch">
+              🌙
+            </div>
+          </nav>
+    </header>
+   
+      <div class="container">
+        
+        <aside class="profile-card">
+          <div >
+            <img class="profile-image" src="images/chaima.png"  />
+          </div>
+          <h2 class="profile-name">MAATAR Chaima</h2>
+          <p class="profile-title">Étudiante en Génie Informatique</p>
+      
+          <hr />
+      
+          <div class="profile-details">
+            <div class="detail">
+              <span class="icon">📧</span>
+              <div>
+                <h3>EMAIL</h3>
+                <p>chaima.maatar@iit.ens.tn</p>
+              </div>
+            </div>
+            <div class="detail">
+              <span class="icon">📞</span>
+              <div>
+                <h3>TÉLÉPHONE</h3>
+                <p>+216 99277166</p>
+              </div>
+            </div>
+            <div class="detail">
+              <span class="icon">🎂</span>
+              <div>
+                <h3>ANNIVERSAIRE</h3>
+                <p>30 juillet, 2001</p>
+              </div>
+            </div>
+            <div class="detail">
+              <span class="icon">📍</span>
+              <div>
+                <h3>LOCALISATION</h3>
+                <p>Tunisie,Sfax</p>
+              </div>
+            </div>
+          </div>
+      
+          <div class="profile-socials">
+            <a href="https://www.facebook.com/chaima.maatar.5?locale=fr_FR" ><img src="images/facebook .png"  /></a>
+            <a href="https://www.instagram.com/chaima_maatar/profilecard/?igsh=MXVwZnZtaHQyd3pyNQ=="><img src="images/instagram.png" /></a>
+            <a href="https://www.linkedin.com/in/chaima-maatar-37a43822a/"><img src="images/linkedin.png"  /></a>
+            
+          </div>
+        </aside>
+      
+       
+        <main class="main-content">
+         
+          <section class="about-me">
+            <h2>À propos de moi</h2>
+            <p>
+              Je suis une étudiante en 1ère année en Génie Informatique à l'Institut International de Technologie (IIT). Je suis passionnée par l'analyse de données et le Business Intelligence, et un peu par le développement web, notamment avec des designs simples et minimalistes. J'adore également apprendre de nouvelles choses et découvrir des technologies innovantes.
+            </p>
+          </section>
+        
+         
+          <section class="location">
+            <h2>Où je me trouve</h2>
+            <p>Je vis à Sfax, Tunisie. Voici ma localisation exacte :</p>
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104888.48554046694!2d10.65069685157286!3d34.7615077775954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13002cda1486c695%3A0x22dfe0a62c50ce6f!2sSfax!5e0!3m2!1sfr!2stn!4v1734296010776!5m2!1sfr!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </section>
+        
+       
+          <section class="interests">
+            <h2>Mes centres d'intérêt</h2>
+            <div class="interest-gallery">
+              
+              <div class="interest">
+                <img src="images/analyse de donnees .png" >
+                <h3>Analyse de données</h3>
+              </div>
+              <div class="interest">
+                <img src="images/films.png">
+                <h3>films</h3>
+              </div>
+              <div class="interest">
+                <img src="images/la-musique.png" >
+                <h3>Musique</h3>
+              </div>
+              
+            </div>
+          </section>
+        </main>
+        
+      </div>
+      
+
+      <footer class="footer">
+        <p>Made with 🫶 by 
+            <a href="https://github.com/shaima07" target="_blank">chaima</a>
+        </p>
+    </footer>
+    
+    <script>
+      const themeSwitch = document.getElementById("theme-switch");
+    
+      // Vérifiez si le mode sombre est activé dans le stockage local au chargement de la page
+      if (localStorage.getItem("dark-mode") === "enabled") {
+        document.body.classList.add("dark-mode");
+      }
+    
+      themeSwitch.addEventListener("click", () => {
+        if (document.body.classList.contains("dark-mode")) {
+          document.body.classList.remove("dark-mode");
+          localStorage.setItem("dark-mode", "disabled");
+        } else {
+          document.body.classList.add("dark-mode");
+          localStorage.setItem("dark-mode", "enabled");
+        }
+      });
+    </script>
+    
+      
+</body>
+</html>

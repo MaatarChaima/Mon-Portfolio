@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Molle&family=Mrs+Sheppards&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Great+Vibes&family=Molle&family=Mrs+Sheppards&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Chaima Maatar</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="resume.html">CV</a></li>
+                <li><a href="experiences.html">Expériences</a></li>
+                <li><a href="manifestations.html">Manifestations</a></li>
+                <li><a href="play.html">Jouer avec moi</a></li>
+                <li><a href="contact.html">Contactez-moi</a></li>
+            </ul>
+            <div class="theme-switch" id="theme-switch">🌙</div>
+        </nav>
+    </header>
+
+    <main class="experiences-main">
+        <section class="section-header">
+            <h1>Mes Expériences</h1>
+            <p>Voici un aperçu des projets et stages que j'ai réalisés au cours de ma carrière.</p>
+        </section>
+
+        <section class="experiences-container">
+          
+            <div class="experience-card">
+                <h2>02/2024 – 05/2024 : Stage de fin d’études – Wide Insights</h2>
+                <div class="experience-details">
+                    <ul>
+                        <li>Modélisation multidimensionnelle à partir d'un modèle opérationnel</li>
+                        <li>Manipulation des données via le langage SQL</li>
+                        <li>Développement et gestion des processus ETL avec SQL Server Integration
+                            Services (SSIS)
+                            </li>
+                        <li> Création et gestion d'une table d'audit pour le suivi et la validation des
+                            opérations de données
+                            </li>
+                        <li>Conception et élaboration d'un cube d'analyse des ventes avec SQL Server
+                            Analysis Services (SSAS) pour une analyse en profondeur des performances
+                            commerciales</li>
+                        <li>Déploiement et automatisation des projets SSIS et SSAS pour assurer une
+                            mise à jour continue et fiable des données</li>
+                        <li>Création de tableaux de bord interactifs et dynamiques avec Power BI pour
+                            visualiser les données et fournir des insights exploitables aux décideurs</li>
+                    </ul>
+                </div>
+                <div >
+                    <h3>Photos du travail</h3>
+                    <div class="media-gallery">
+                        <img src="../images/dbPFE1.png" alt="Capture d'écran 1">
+                        <img src="../images/dbPFE2.png" alt="Capture d'écran 2">
+                        <img src="../images/dbPFE3.png" alt="Capture d'écran 3">
+                        <img src="../images/dbPFE4.png" alt="Capture d'écran 4">
+                    </div>
+                </div>
+                <div class="media">
+                    <h3>Vidéo démonstrative</h3>
+                    <video controls>
+                        <source src="../video/Média1.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            
+            <div class="experience-card">
+                <h2>06/2023 – 07/2023 : Stage de fin d’année – Wide Insights</h2>
+                <div class="experience-details">
+                    <ul>
+                        <li>Réalisation d'une recherche approfondie sur le domaine de l'informatique
+                            décisionnelle</li>
+                        <li>Analyse du module commandes du datamart à l'aide de requêtes SQL via
+                            SQL Server Management Studio
+                            </li>
+                        <li>Exploration des fonctionnalités et des capacités de Power BI
+                        </li>
+                        <li>Développement d'un tableau de bord interactif avec Power BI
+                        </li>
+                    </ul>
+                </div>
+                <div class="media2">
+                    <h3>Photos du travail</h3>
+                    <img src="../images/dashboardPFA.png" >
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>Made with 🫶 by 
+            <a href="https://github.com/shaima07" target="_blank">chaima</a>
+        </p>
+    </footer>
+    <script>
+        const themeSwitch = document.getElementById("theme-switch");
+      
+        // Vérifiez si le mode sombre est activé dans le stockage local au chargement de la page
+        if (localStorage.getItem("dark-mode") === "enabled") {
+          document.body.classList.add("dark-mode");
+        }
+      
+        themeSwitch.addEventListener("click", () => {
+          if (document.body.classList.contains("dark-mode")) {
+            document.body.classList.remove("dark-mode");
+            localStorage.setItem("dark-mode", "disabled");
+          } else {
+            document.body.classList.add("dark-mode");
+            localStorage.setItem("dark-mode", "enabled");
+          }
+        });
+      </script>
+      
+</body>
+</html>
