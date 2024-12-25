@@ -1,0 +1,180 @@
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Molle&family=Mrs+Sheppards&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Great+Vibes&family=Molle&family=Mrs+Sheppards&display=swap" rel="stylesheet">
+</head>
+
+  
+<body>
+  <header>
+        
+    <nav class="navbar">
+        <div  class="logo">Chaima Maatar</div>
+        <ul class="nav-links" >
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="resume.html">CV</a></li>
+          <li><a href="experiences.html">Expériences</a></li>
+          <li><a href="manifestations.html">Manifestations</a></li>
+          <li><a href="play.html">Jouer avec moi</a></li>
+          <li><a href="contact.html">Contactez-moi</a></li>
+        </ul>
+        <div class="theme-switch" id="theme-switch">
+          🌙
+        </div>
+      </nav>
+</header>
+<div class="quiz-container">
+  <h1>Quiz Drapeaux du Monde : Vrai ou Faux</h1>
+  <div id="quiz">
+     
+  </div>
+  <div id="res">
+    
+  </div>
+  <button id="next-btn">Question suivante</button>
+</div>
+
+<div id="scoreid">
+  
+</div>
+  
+    <script>const quizlist = [
+      {
+          question: "La bande située au milieu du drapeau allemand est rouge. Vrai ou faux ?",
+          correct: "vrai",
+          explication: "../images/allemagne.png"
+      },
+      {
+          question: "Le drapeau suédois représente une croix bleue sur un fond jaune. Vrai ou faux ?",
+          correct: "faux",
+          explication: "../images/suedois.png"
+      },
+      {
+          question: "Le soleil au centre du drapeau argentin possède un visage. Vrai ou faux ?",
+          correct: "vrai",
+          explication: "../images/argentin.png"
+      },
+      {
+          question: "Un chêne se trouve au centre du drapeau du Liban. Vrai ou faux ?",
+          correct: "faux",
+          explication: "../images/liban.png"
+      },
+      {
+          question: "Un aigle à deux têtes se trouve sur le drapeau de l’Albanie. Vrai ou faux ?",
+          correct: "vrai",
+          explication: "../images/albanie.png"
+      },
+      {
+          question: "L’étoile au centre du drapeau du Maroc possède six branches. Vrai ou faux ?",
+          correct: "faux",
+          explication: "../images/maroc.png"
+      },
+      {
+          question: "L’étoile au centre du drapeau du Sénégal est verte. Vrai ou faux ?",
+          correct: "vrai",
+          explication: "../images/senegal.png"
+      },
+      {
+          question: "Sur le drapeau de l’Ukraine, la bande jaune est située en bas. Vrai ou faux ?",
+          correct: "vrai",
+          explication: "../images/ukraine.png"
+      },
+      {
+          question: "Une des couleurs du drapeau du Qatar est le orange. Vrai ou faux ?",
+          correct: "faux",
+          explication: "../images/qatar.png"
+      },
+      {
+          question: "On peut voir l’île de Chypre sur le drapeau de Chypre. Vrai ou faux ?",
+          correct: "vrai",
+          explication: "../images/chypre.png"
+      }
+  ];
+  
+  const quiz = document.getElementById('quiz');
+  const resultat = document.getElementById('res');
+  const nextBtn = document.getElementById('next-btn');
+  const scorediv = document.getElementById('scoreid');
+  
+  var nbr = 0;
+  var score = 0;
+  
+  
+  function Question() {
+      resultat.innerHTML = "";
+      nextBtn.style.display = "none";
+  
+      const currentQuestion = quizlist[nbr];
+      quiz.innerHTML = `
+          <div class="question">${currentQuestion.question}</div>
+          <button class="answer-btn" onclick="checkAnswer('vrai')">Vrai</button>
+          <button class="answer-btn" onclick="checkAnswer('faux')">Faux</button>
+      `;
+  }
+  
+  
+  function checkAnswer(answer) {
+      const currentQuestion = quizlist[nbr];
+  
+      if (answer === currentQuestion.correct) {
+          resultat.innerHTML = "<p style='color: green;'>Correct !</p>";
+          score++;
+      } else {
+          resultat.innerHTML = "<p style='color: red;'>Incorrect !</p>";
+      }
+  
+      
+      resultat.innerHTML += `<img src="${currentQuestion.explication}" alt="Image drapeau">`;
+  
+      nextBtn.style.display = "block";
+  }
+  
+  
+  nextBtn.addEventListener("click", () => {
+      nbr++;
+      if (nbr < quizlist.length) {
+          Question();
+      } else {
+          affichescore();
+      }
+  });
+  
+ 
+  function affichescore() {
+      quiz.innerHTML = "";
+      resultat.innerHTML = "";
+      scorediv.innerHTML = `Votre score final est : ${score} / ${quizlist.length}`;
+      nextBtn.style.display = "none";
+  }
+  
+  Question();
+  </script>
+   <footer class="footer">
+    <p>Made with 🫶 by 
+        <a href="https://github.com/shaima07" target="_blank">chaima</a>
+    </p>
+</footer>
+<script>
+    const themeSwitch = document.getElementById("theme-switch");
+  
+    // Vérifiez si le mode sombre est activé dans le stockage local au chargement de la page
+    if (localStorage.getItem("dark-mode") === "enabled") {
+      document.body.classList.add("dark-mode");
+    }
+  
+    themeSwitch.addEventListener("click", () => {
+      if (document.body.classList.contains("dark-mode")) {
+        document.body.classList.remove("dark-mode");
+        localStorage.setItem("dark-mode", "disabled");
+      } else {
+        document.body.classList.add("dark-mode");
+        localStorage.setItem("dark-mode", "enabled");
+      }
+    });
+  </script>
+  
+  </body>
+</html>
